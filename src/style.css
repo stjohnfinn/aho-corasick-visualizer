@@ -1,0 +1,73 @@
+@font-face {
+  font-family: "Roboto Slab";
+  src: url("./fonts/Roboto_Slab/RobotoSlab-VariableFont_wght.ttf");
+}
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: #F9DEC9;
+  color: black;
+  font-family: "Roboto Slab";
+  min-width: 1200px;
+}
+
+#App {
+  height: 100vh;
+}
+
+#Header {
+  height: 12%;
+  min-height: 120px;
+  background-color: #685044;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 5fr 1fr;
+  align-items: center;
+}
+#Header p {
+  margin: 0;
+  padding: 0;
+  font-size: 40px;
+  grid-column-start: 4;
+  grid-column-end: 5;
+}
+#Header h1 {
+  font-size: 50px;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  margin: 0;
+  text-align: center;
+  border: 2px black solid;
+  border-radius: 50%;
+  height: 70px;
+  width: 75px;
+  transition: 0.2s all;
+  cursor: pointer;
+}
+#Header h1:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+#Header h1::selection {
+  background: transparent;
+}
+
+#Content {
+  height: 86.8%;
+  position: relative;
+}
+#Content .aboutVisible {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: 0.2s all;
+}
+#Content .aboutInvisible {
+  display: none;
+}
+
+/*# sourceMappingURL=style.css.map */
