@@ -1,25 +1,45 @@
-import React, { useState } from 'react';
-import Header from './Header';
-import Content from './Content';
+import React from 'react';
+import Navbar from './Navbar';
+import Visual from './Visual';
 
-function App() {
+class App extends React.Component {
 
-    const [isAboutShown, setIsAboutShown] = useState(false);
-    let aboutClass;
+    constructor() {
+        super();
 
-    if (isAboutShown) {
-        aboutClass = 'aboutVisible';
-    } else {
-        aboutClass = 'aboutInvisible';
+        this.state = {
+            originalStr: '',
+            substring: ''
+        };
+
+        this.handleChange = this.handleChange.bind(this);
     }
 
-    return (
-        <div id='App'>
-            <Header 
-                onInfoClick={async () => setIsAboutShown(!isAboutShown) }/>
-            <Content aboutClass={aboutClass} />
-        </div>
-    );
+    handleChange(event) {
+        const {name, value} = event.target;
+        console.log(name);
+        console.log(value);
+
+        if (name === 'originalStr') {
+            this.setState({
+                originalStr: value
+            });
+        } else if (name === 'substring') {
+            this.setState({
+                substring: value
+            });
+        }
+    }
+
+    render() {
+
+        return (
+            <div id='App'>
+                <Navbar handleChange={this.handleChange} originalStr={this.state.originalStr} substring={this.state.substring} />
+                <Visual />
+            </div>
+        )
+    }
 }
 
 export default App;
