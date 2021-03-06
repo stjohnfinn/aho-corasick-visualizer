@@ -9,7 +9,8 @@ function Content(props) {
             <InputCont />
             <Visualization />
             <div className={props.aboutClass} >
-                <p>Abott and Costello Asshole Visualizer</p>
+                <h1>Abott and Costello Asshole Visualizer</h1>
+                <p>Visual tool using React and some other libraries to visualize the Aho-Corasick Automata</p>
             </div>
         </div>
     );
