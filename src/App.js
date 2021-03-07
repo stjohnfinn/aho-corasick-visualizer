@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './Navbar';
 import Visual from './Visual';
+import { stringSearch } from './stringSearch.js';
 
 class App extends React.Component {
 
@@ -9,16 +10,16 @@ class App extends React.Component {
 
         this.state = {
             originalStr: '',
-            substring: ''
+            substring: '',
+            text: ''
         };
 
         this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(event) {
         const {name, value} = event.target;
-        console.log(name);
-        console.log(value);
 
         if (name === 'originalStr') {
             this.setState({
@@ -31,12 +32,20 @@ class App extends React.Component {
         }
     }
 
+    handleSubmit() {
+        console.log('starting algorithm');
+
+        this.setState({
+            text: stringSearch(this.state.originalStr, this.state.substring)
+        });
+    }
+
     render() {
 
         return (
             <div id='App'>
-                <Navbar handleChange={this.handleChange} originalStr={this.state.originalStr} substring={this.state.substring} />
-                <Visual />
+                <Navbar handleChange={this.handleChange} originalStr={this.state.originalStr} substring={this.state.substring} handleSubmit={this.handleSubmit} />
+                <Visual text={this.state.text} />
             </div>
         )
     }

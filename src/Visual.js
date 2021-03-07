@@ -1,10 +1,10 @@
 import React from 'react';
 
-function Visual() {
+function Visual(props) {
 
     return (
         <div id='Visual'>
-            <span>Visualization</span>
+            <h1>{props.text}</h1>
         </div>
     )
 }

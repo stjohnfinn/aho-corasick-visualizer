@@ -37,9 +37,11 @@ body {
     grid-template-columns: 0.5fr 3fr 1.5fr 2fr 1fr 2fr 1fr;
     align-items: center;
     height: 7%;
+    border-bottom: 2px black solid;
 
     h2 {
         margin: 0;
+        text-align: center;
     }
 
     div {
@@ -85,10 +87,13 @@ body {
     p {
         font-size: 125%;
         margin: 0;
-        text-align: center;
+        text-align: right;
+        padding-right: 10px;
     }
 
     #info {
+        margin: 0;
+        padding: 0;
         font-weight: bolder;
         border: 2px black solid;
         border-radius: 50%;
@@ -97,6 +102,7 @@ body {
         justify-self: center;
         cursor: pointer;
         transition: 0.2s all;
+        text-align: center;
 
         &:hover {
             background-color: rgba(0, 0, 0, 0.3);
@@ -123,7 +129,7 @@ body {
             left: 50%;
             top: 0;
             transform: translateX(-50%);
-            transition: 0.25s all;
+            transition: 0.15s all;
         }
 
         &:hover::before {

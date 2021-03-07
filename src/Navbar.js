@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 function Navbar(props) {
 
@@ -6,15 +6,15 @@ function Navbar(props) {
         <div id='Navbar'>
             <p id='info'>i</p>
             <h2>Aho-Corasick Algorithm Visualizer</h2>
-            <p>Original String:</p>
+            <p>Text String:</p>
             <div className='inputEntryDiv'>
                 <input type='text' name='originalStr' value={props.originalStr} onChange={props.handleChange} />
             </div>
-            <p>Substring:</p>
+            <p>Pattern String:</p>
             <div className='inputEntryDiv'>
                 <input type='text' name='substring' value={props.substring} onChange={props.handleChange} />
             </div>
-            <button>Search</button>
+            <button onClick={props.handleSubmit}>Search</button>
         </div>
     )
 }
